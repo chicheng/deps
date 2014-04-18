@@ -81,6 +81,18 @@ Use ManyToManyField if require more.
 
 	store.open_days.add(Store.open_days.wednesday)
 
+#### Remove value
+
+	store.open_days &= ~Store.open_days.sunday
+
+	# equal to
+
+	store.open_days.sunday = False
+
+	# equal to
+
+	store.open_days.remove(Store.open_days.sunday)
+
 ### Query
 
 A list of options or a single value should be passed as parameter value. 
