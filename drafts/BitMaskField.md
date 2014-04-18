@@ -4,7 +4,7 @@
 |:-----:|:----------|
 |Created|2014-04-19 |
 |Author |CHI Cheng	|
-|Status:|Draft		|
+|Status |Draft		|
 
 ## Overview
 
@@ -53,10 +53,33 @@ Use ManyToManyField if require more.
 
 ### Write
 
-	store.open_days = store.open_days.monday | store.open_days.tuesday
-	# or
+#### Set value
+
+	store.open_days = Store.open_days.monday | Store.open_days.tuesday
+
+	# equal to
+
+	store.open_days.clear()
 	store.open_days.monday = True
 	store.open_days.tuesday = True
+
+	# equal to
+
+	# Allow many-to-many fields methods
+	store.open_days.clear()
+	store.open_days.add(Store.open_days.monday, Store.open_days.tuesday)
+
+#### Add value
+
+	store.open_days |= Store.open_days.wednesday
+
+	# equal to
+
+	store.open_days.wednesday = True
+
+	# equal to
+
+	store.open_days.add(Store.open_days.wednesday)
 
 ### Query
 
