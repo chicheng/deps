@@ -21,9 +21,11 @@ BitMaskField(s) are based on Positive(Small)IntegerField and BigIntegerField.
 
 Maximum number of options (round down to nearest multiple of 5)
 
-:SmallBitMaskField: 15
-:BitMaskField: 30
-:BigBitMaskField: 60
+|Field		|Maximum number of options		|
+|:---------:|:------------------------------|
+|SmallBitMaskField	| 15	|
+|BitMaskField		| 30	|
+|BigBitMaskField	| 60	|
 
 Use ManyToManyField if require more.
 
