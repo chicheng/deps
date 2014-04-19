@@ -105,7 +105,7 @@ A list of options or a single value should be passed as parameter value.
 	Store.objects.filter(open_days__in=Store.open_days.sunday)
 	# or
 	Store.objects.filter(open_days__contains=Store.open_days.sunday)
-	# SQL: open_days & 0b1000000 > 0
+	# SQL: open_days & 0b1000000 <> 0
 
 
 	# Find stores only open on Saturday and Sunday (not on weekdays)
@@ -115,12 +115,12 @@ A list of options or a single value should be passed as parameter value.
 	# Find stores open on both Saturday and Sunday (may open on weekdays or not)
 	# or call it field_name__all ?
 	Store.objects.filter(open_days__contains=[Store.open_days.saturday, Store.open_days.sunday])
-	# SQL: open_days & 0b1000000 > 0 AND open_days & 0b0100000 > 0
+	# SQL: open_days & 0b1000000 <> 0 AND open_days & 0b0100000 <> 0
 
 	# Find stores open on Saturday and/or Sunday (may open on weekdays or not)
 	# or call it field_name__any ?
 	Store.objects.filter(open_days__in=[Store.open_days.saturday, Store.open_days.sunday])
-	# SQL: open_days & 0b1100000 > 0
+	# SQL: open_days & 0b1100000 <> 0
 
 
 ## Related functions
